@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PHM Algorithm Form</title>
+  <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+  <style>
+    body {
+      background-color: #fafafa;
+    }
+
+    .form-control:focus {
+      box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.15);
+    }
+  </style>
+</head>
+<body>
+<div class="container py-4">
+  <th:block th:replace="~{fragments/header::header}"></th:block>
+  <header class="mb-4">
+    <h1 class="h3 mb-2">PHM Algorithm</h1>
+    <p class="text-secondary small mb-3">Mining periodic high utility itemsets from transactional databases</p>
+  </header>
+
+  <form th:action="@{/run}" method="post" enctype="multipart/form-data" class="bg-white shadow-sm rounded p-3">
+    <div class="mb-4">
+      <h2 class="h5 mb-3">Required Parameters</h2>
+      <div class="mb-3">
+        <label class="form-label small font-weight-bold">Input file (<= 100MB)</label>
+        <input type="file" class="form-control form-control-sm" name="inputFile" required accept=".txt">
+      </div>
+
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label small">Minimum Utility</label>
+          <input placeholder="e.g. 20" type="number" class="form-control form-control-sm" name="minUtility"
+                 required min="0" step="1">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small">Minimum periodicity</label>
+          <input placeholder="1" type="number" class="form-control form-control-sm" name="minPer" required
+                 min="0" step="1">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small">Maximum periodicity</label>
+          <input placeholder="3" type="number" class="form-control form-control-sm" name="maxPer" required
+                 min="0" step="1">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small">Minimum average periodicity</label>
+          <input placeholder="e.g. 1" type="number" class="form-control form-control-sm" name="minAvg"
+                 required min="0" step="1">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small">Maximum average periodicity</label>
+          <input placeholder="e.g. 3" type="number" class="form-control form-control-sm" name="maxAvg"
+                 required min="0" step="1">
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <h2 class="h5 mb-3">Optional Parameters</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label small">Minimum number of items</label>
+          <input placeholder="e.g. 1" type="number" class="form-control form-control-sm" name="minItem"
+                 min="1" step="1">
+        </div>
+        <div class="col-md-6">
+          <label class="form-label small">Maximum number of items</label>
+          <input placeholder="e.g. 5" type="number" class="form-control form-control-sm" name="maxItem"
+                 min="1" step="1">
+        </div>
+      </div>
+    </div>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary btn-sm px-4">Run Algorithm</button>
+      <button type="reset" class="btn btn-danger btn-sm px-4">Reset Param</button>
+    </div>
+  </form>
+</div>
+
+<th:block th:replace="~{fragments/footer:: footer}"></th:block>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+</body>
+</html>

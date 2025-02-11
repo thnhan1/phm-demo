@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <title>Good Template</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<footer th:fragment="footer"  class="bg-light mt-5 py-4 border-top">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <h5 class="h6 mb-3">About PHM Algorithm</h5>
+        <p class="small text-secondary">PHM (Periodic High-utility Mining) is an algorithm designed for discovering periodic high-utility itemsets in transaction databases.</p>
+      </div>
+      <div class="col-md-4">
+        <h5 class="h6 mb-3">Key References</h5>
+        <ul class="list-unstyled small">
+          <li class="mb-2">
+             Fournier-Viger, P., Lin, C.W., Duong, Q.-H., Dam, T.-L. (2016). PHM: Mining Periodic High-Utility Itemsets. Proc. 16th Industrial Conference on Data Mining. Springer LNAI 9728, 15 pages.
+          </li>
+          <li class="mb-2">
+            <a href="https://www.philippe-fournier-viger.com/spmf/index.php?link=documentation.php">
+              SPMF - An Open Source Data Mining Library
+            </a>
+            SPMF Document</li>
+        </ul>
+      </div>
+      <div class="col-12">
+        <hr class="my-2">
+        <p class="text-center small text-secondary mb-0">
+          2025
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

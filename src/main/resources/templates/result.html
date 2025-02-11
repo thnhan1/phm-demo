@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>PHM Algorithm Result</title>
+  <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container py-4">
+  <th:block th:replace="~{fragments/header::header}"></th:block>
+  <h1>PHM Algorithm Result</h1>
+  <form th:action="@{/downloadResult}" method="get">
+    <input type="hidden" name="outputFilePath" th:value="${outputFilePath}" />
+    <button type="submit" class="btn btn-success">Download Result</button>
+  </form>
+
+  <div th:if="${error}">
+    <p class="text-danger" th:text="${error}"></p>
+  </div>
+
+  <div th:unless="${error}">
+    <p><strong>Output:</strong></p>
+    <pre th:text="${result}"></pre>
+
+    <p><strong>Running Time:</strong> <span th:text="${runningTime}"></span> milliseconds</p>
+    <p><strong>Memory Usage:</strong> <span th:text="${memoryUsage}"></span> MB</p>
+    <p><strong>Itemset Count:</strong> <span th:text="${itemsetCount}"></span></p>
+
+
+  </div>
+
+  <a href="/" class="btn btn-primary">Back to Home</a>
+</div>
+<script th:src="@{/bootstrap/js/bootstrap.bundle.js}"></script>
+</body>
+</html>

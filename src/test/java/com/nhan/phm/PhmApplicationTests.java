@@ -1,0 +1,13 @@
+package com.nhan.phm;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PhmApplicationTests {
+
+  @Test
+  void contextLoads() {
+  }
+
+}
