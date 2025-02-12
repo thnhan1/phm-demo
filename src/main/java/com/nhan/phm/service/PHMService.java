@@ -1,5 +1,6 @@
 package com.nhan.phm.service;
-import ca.pfv.spmf.algorithms.frequentpatterns.hui_miner.AlgoPHM;
+//import ca.pfv.spmf.algorithms.frequentpatterns.hui_miner.AlgoPHM;
+import com.nhan.phm.service.api.AlgoPHM;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
